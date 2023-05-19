@@ -1,0 +1,1078 @@
+$primary-color: blue;
+$nav-txt-clr: #1EA4FF;
+$btn-background-clr:#DC780B;
+$blk-clr:#000000;
+$white: #fff;
+$p-clr:#808080;
+$header-clr:#FFA500;
+$footer-background-clr:#252525;
+$half-width: 50%;
+$fullWidth: 100%;
+$margin: 0 auto;
+$font-weights: (
+    "regular": 500,
+    "medium":  600,
+    "bold": 700,
+    "x-bold": 800
+);
+$font-sizes: (
+    "small": 10px,
+    "xSmall": 15px,
+    "semi-regular": 18px,
+    "regular": 20px,
+    "mini-regular": 25px,
+    "medium": 30px,
+    "mini-medium": 35px,
+    "large": 40px,
+    "x-large": 45px,
+    "xx-large": 50px
+);
+
+
+@function weight($weight_name) {
+   @return map-get($font-weights, $weight_name);
+}
+
+@function size($font-size-name) {
+   @return map-get($font-sizes, $font-size-name);
+}
+
+@mixin Flex {
+    display: flex;
+}
+
+@mixin scale {
+    transform: scale(.9);
+}
+
+@mixin button {
+    #delete {
+        color: $white;
+        border: none;
+        border-radius: 5px;
+        background-color: red;
+        padding: 2px 10px;
+        &:active {
+            @include scale;
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(12, 96, 121); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgb(16, 235, 238); 
+    background-color: #1EA4FF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.navbar {
+    width: $fullWidth;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    background-color: rgb(219, 220, 223, 0.5);
+    .navbar-brand {
+        img {
+            width: 47px;
+            height: 47px;
+        }
+    }
+    .navbar-nav {
+        @include Flex;
+        gap: 12px;
+        .nav-item {
+            .nav-link {
+                color: $nav-txt-clr;
+                letter-spacing: 0.5px;
+                font-size: 17px;
+            }
+        }
+    }
+    
+    .form {
+        #sun {
+            width: 65px;
+            border-radius: 50%;
+            border: transparent;
+            margin-right: 15px;
+        }
+        .submitBtn {
+            width: 110px;
+            border: transparent;
+            border-radius: 5px;
+            height: 60px;
+            background-color: $btn-background-clr;
+            &:active {
+                transform: scale(.9);
+            }
+        }
+    }
+}
+
+
+.content-container {
+    .food__wrapper {
+        @include Flex;
+        width: 84%;
+        margin: $margin;
+        margin-top: calc(200px - 120px);
+        .food__txt {
+            width: $half-width;
+            @include Flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            h1 {
+                font-weight: weight(regular);
+                font-size: size(xx-large);
+                width: 90%;
+                color: rgb(94, 85, 85);
+            }
+            p {
+                font-weight: weight(regular);
+                font-size: size(semi-regular);
+                width: 90%;
+                color: $p-clr;
+                margin: 20px 0;
+            }
+            .btn__group {
+                .btn {
+                    width: 150px;
+                    height: 50px;
+                    background-color: $btn-background-clr;
+                    color: $white;
+                    font-size: size(semi-regular);
+                    &:active {
+                        @include scale;
+                    }
+                }
+                .btn2 {
+                    width: 170px;
+                    height: 50px;
+                    border: 2px solid $btn-background-clr;
+                    border-radius: 5px;
+                    margin-left: 27px;
+                    color: $btn-background-clr;
+                    font-size: size(semi-regular);
+                    &:active {
+                        @include scale;
+                    }
+                }
+            }
+        }
+        .food__image {
+            width: $half-width;
+            img {
+                width: $fullWidth;
+                height: $fullWidth;
+            }
+        }
+    }
+    .food__feature {
+        width: 87%;
+        height: 50%;
+        text-align: center;
+        margin: $margin;
+        span {
+            letter-spacing: 1.5px;
+            color: $btn-background-clr;
+            font-size: size(medium)
+        }
+        .food__cards {
+            @include Flex;
+            height: 70%;
+            .food__card {
+                @include Flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                gap: 15px;
+                padding: 0 20px;
+                img {
+                    width: 50px;
+                    height: 50px;
+                    display: inline-block;
+                    margin: $margin;
+                }
+                h1 {
+                    font-size: size(medium);
+                    display: inline-block;
+                    margin: $margin;
+                }
+                p {
+                    font-size: size(regular);
+                    text-align: center;
+                    display: inline-block;
+                    margin: $margin;
+                    color: $p-clr;
+                }
+            }
+        }
+    }
+    .background__wrapper {
+        background: url(../assets/images/vector.png) no-repeat;
+        margin-top: 100px;
+        @include Flex;
+        align-items: center;
+    }
+    .food__aboutUs {
+        width: 84%;
+        @include Flex;
+        justify-content: space-between;
+        margin: $margin;
+         .about__image {
+            img {
+                border-radius: 23px;
+            }
+         }
+        .about__text {
+            width: $half-width;
+            margin: 0 50px;
+            @include Flex;
+            flex-direction: column;
+            justify-content: center;
+
+            span {
+                font-size: size(mini-regular);
+                font-weight: weight(medium);
+                color: $btn-background-clr;
+                letter-spacing: 1.7px;
+            }
+            h1 {
+                font-weight: weight(medium);
+                margin: 15px 0;
+            }
+            p {
+                font-size: size(regular);
+                color: $p-clr;
+                width: 88%;
+            }
+            .btn {
+                width: 145px;
+                height: 50px;
+                background-color: $btn-background-clr;
+                color: $white;
+                margin-top: 12px;
+                &:active {
+                    @include scale;
+                }
+            }
+        }
+    }
+    .food__menu {
+        width: 84%;
+        padding: 30px 0;
+        margin: $margin;
+        margin-top: 40px;
+        text-align: center;
+        span {
+            font-size: size(mini-regular);
+            font-weight: weight(bold);
+            color: $btn-background-clr;
+            letter-spacing: 3px;
+        }
+        h1 {
+            font-size: size(mini-medium);
+            font-weight: weight(bold);
+            letter-spacing: 1.2px;
+            margin: 8px 0;
+        }
+        p {
+            font-size: size(semi-regular);
+            width: 75%;
+            word-spacing: normal;
+            margin: $margin;
+            color: $p-clr;
+        }
+        .product__cards {
+            margin-top: 24px;
+            @include Flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            .product__card {
+                width: 31%;
+                border-radius: 5px;
+                border-top-left-radius: 55px;
+                box-shadow: 8px 8px 17px 0px lightgrey;
+                margin: $margin;
+                background-color: #F8F9FA;
+
+                img {
+                    border-top-left-radius: 55px;
+                    width: $fullWidth;
+                }
+                .product__cost {
+                    @include Flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 5px 25px;
+
+                    h2 {
+                        font-size: size(mini-regular);
+                        margin-top: 5px;
+                    }
+                }
+                p {
+                    font-size: size(regular);
+                    color: $p-clr;
+                    width: $fullWidth;
+                    text-align: start;
+                    padding-left: 25px;
+                    margin: 3px 0;
+                }
+                .product__count {
+                    padding: 15px 25px;
+                    .addBtn {
+                        width: 60px;
+                        border-radius: 8px;
+                        height: 50px;
+                        font-size: size(medium);
+                        border: transparent;
+                        color: $white;
+                        background-color: $btn-background-clr;
+                        transition: .2s;
+                        &:active {
+                            @include scale;
+                            color: rgb(0, 255, 8);
+                        }
+                    }
+                    .stars {
+                        height: 40px;
+                        border: 1px solid red;
+                        @include Flex;
+                        margin: $margin;
+                        justify-content: flex-end;
+                    }
+                }
+            }
+        }
+        .learnMore {
+            display: inline-block;
+            margin-top: 40px;
+        }
+    }
+    .food__take {
+        width: 84%;
+        height: 80%;
+        margin: $margin;
+        margin-top: 70px;
+        @include Flex;
+        
+        .take__text {
+            width: 53%;
+            @include Flex;
+            flex-direction: column;
+            justify-content: center;
+
+            span {
+                font-size: size(xSmall);
+                color: $btn-background-clr;
+            }
+            h1 {
+                font-size: size(mini-medium);
+                color: rgb(79, 72, 72);
+                font-weight: weight(bold);
+            }
+            p {
+                width: 90%;
+                color: $p-clr;
+                font-size: size(semi-regular);
+                margin: 20px 0;
+            }
+            .takeBtn__group {
+                .takeBtn {
+                    width: 140px;
+                    border-radius: 5px;
+                    height: 45px;
+                    background-color: rgb(89, 80, 80);
+                    color: $white;
+                    border: transparent;
+                    &:active {
+                        @include scale;
+                    }
+                }
+                .takeBtn2 {
+                    background-color: $white;
+                    color: $blk-clr;
+                    margin-left: 20px;
+                    width: 160px;
+                    border: 2px solid $blk-clr;
+                    &:active {
+                        @include scale;
+                    }
+                }
+            }
+        }
+        .take__image {
+            @include Flex;
+            justify-content: center;
+            width: 45%;
+            img {
+                height: $fullWidth;
+            }
+        }
+    }
+    .carousel {
+        margin-top: 80px;
+        height: 68%;
+        .carousel-inner {
+            width: 50%;
+            margin: $margin;
+            text-align: center;
+            .carousel-item {
+                height: 100%;
+                span {
+                    font-size: size(mini-regular);
+                    color: $btn-background-clr;
+                    font-weight: weight(bold);
+                    letter-spacing: 4px;
+                    margin: 10px 0;
+                }
+                h1 {
+                    font-size: size(mini-medium);
+                    font-weight: weight(regular);
+                    color: $blk-clr;
+                    margin: 20px 0;
+                }
+                img {
+                    margin: 25px 0;
+                }
+                p {
+                    margin: $margin;
+                    font-size: size(semi-regular);
+                }
+                .txt {
+                    word-spacing: 2px;
+                }
+                .stars2 {
+                   margin-top: 15px;
+                }
+            }
+        }
+    }
+    .food__contact {
+        margin: 30px 0;
+        padding: 60px;
+        @include Flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #fbf1e7a6;
+        gap: 30px;
+        align-items: center;
+        span {
+            font-size: size(regular);
+            color: $btn-background-clr;
+            letter-spacing: 2px;
+            font-weight: weight(medium);
+        }
+        h3 {
+            width: 60%;
+            display: inline-block;
+            text-align: center;
+            font-size: size(mini-regular);
+        }
+        .input-group {
+            display: inline-block;
+            text-align: center;
+
+            input {
+                padding: 0 20px;
+                width: 720px;
+                height: 48px;
+                border-radius: 5px;
+                border: transparent;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .contactBtn {
+                width: 90px;
+                height: 48px;
+                border-radius: 5px;
+                border: transparent;
+                background-color: $btn-background-clr;
+                color: $white;
+               
+                &:active {
+                    @include scale;
+                    background-color: $p-clr;
+                };
+            }
+        }
+    }
+    .food__footer {
+        @include Flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 50px;
+        background-color: #252525;
+        color: $p-clr;
+
+          .footer__links {
+            line-height: 2;
+            a {
+                text-decoration: none;
+                color: $p-clr;
+                p {
+                    cursor: pointer;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+              span {
+                color: $white;
+                font-size: size(semi-regular);
+              }
+              ul {
+                a {
+                  text-decoration: none;
+                  color: $p-clr;
+                }
+                  li:hover {
+                    cursor: pointer;
+                    color: $white;
+                  }
+              }
+              .icon__group {
+                @include Flex;
+                gap: 8px;
+                margin-top: 10px;
+              }
+          }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 640px){
+    .navbar-nav {
+        text-align: center;
+    }
+    .form {
+        @include Flex;
+        justify-content: center;
+        gap: 20px;
+        
+    }
+    .content-container {
+        .food__wrapper {
+            width: $fullWidth;
+            height: auto;
+            flex-direction: column;
+    
+            .food__txt {
+                width: $fullWidth;
+                height: auto;
+                text-align: center;
+                padding: 8px;
+                margin-top: 15px;
+                h1 {
+                    font-size: size(x-large);
+                    width: $fullWidth;
+                }
+                p {
+                    width: $fullWidth;
+                    font-size: size(regular);
+                }
+            }
+            .food__image {
+                width: $fullWidth;
+                height: auto;
+            }
+        }
+        .food__feature {
+            width: $fullWidth;
+            height: auto;
+            span {
+                font-size: size(mini-regular);
+            }
+            h1 {
+                font-size: size(mini-medium);
+            }
+           .food__cards {
+            flex-wrap: wrap;
+            .food__card {
+                width: $fullWidth;
+                height: auto;
+                margin: 20px 0;
+
+                p {
+                    width: 85%;
+                }
+            }
+           }
+        }
+        .food__menu {
+            p {
+                width: $fullWidth;
+            }
+            width: $fullWidth;
+            .product__cards {
+                .product__card {
+                    width: $fullWidth;
+                    img {
+                        width: 93%;
+                        margin: $margin;
+                    }
+                }
+            }
+        }
+        .food__take {
+            width: $fullWidth;
+            flex-wrap: wrap;
+            margin-top: 0;
+            gap: 30px;
+            height: auto;
+            .take__text {
+                width: $fullWidth;
+                height: auto;
+                text-align: center;
+                h1 {
+                    padding: 0 20px;
+                }
+                p {
+                    width: $fullWidth;
+                    padding: 0 10px;
+                }
+            }
+            .take__image {
+                width: $fullWidth;
+                img {
+                    width: $fullWidth;
+                }
+            }
+        }
+        .carousel {
+            width: $fullWidth;
+            height: 80%;
+            .carousel-inner {
+                height: auto;
+                width: $fullWidth;
+                .carousel-item {
+                    span {
+                        font-size: size(semi-regular);
+                    }
+                    h1 {
+                        font-size: size(medium);
+                    }
+                    p {
+                        font-size: size(xSmall);
+                        width: $fullWidth;
+                    }
+                    .txt {
+                        width: $fullWidth;
+                    }
+                }
+            }
+        }
+        .food__contact {
+            width: $fullWidth;
+            height: auto;
+            margin-bottom: 90px;
+            h3 {
+                width: $fullWidth;
+                font-size: size(regular);
+            }
+            span {
+                margin-top: 12px;
+            }
+            .input-group {
+                input {
+                    width: 220px;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+        .food__footer {
+            width: $fullWidth;
+            height: auto;
+            flex-direction: column;
+            padding: 25px 0;
+
+            .footer__links {
+                display: inline-block;
+                text-align: center;
+                width: 90%;
+                .icon__group {
+                    width: $fullWidth;
+                    display: inline-block;
+                    margin: $margin;
+                }
+            }
+            .footer__links:not(:nth-child(1)) ul li, span  {
+                margin-right: 25px;
+            }
+        }
+    }
+    .background__wrapper {
+        height: auto;
+        margin-top: 180px;
+        .food__aboutUs {
+            width: $fullWidth;
+            flex-wrap: wrap;
+            height: auto;
+    
+            .about__text {
+                width: $fullWidth;
+                height: auto;
+                text-align: center;
+                margin: 20px 0;
+                
+                p {
+                    width: $fullWidth;
+                }
+                .btn {
+                    display: inline-block;
+                    margin: $margin;
+                }
+            }
+            .about__image {
+                width: 93%;
+                margin: $margin;
+                height: auto;
+                img {
+                    width: $fullWidth;
+                    height: $fullWidth;
+                }
+            }
+        }
+    }
+    #product_modal {
+        #outBtn {
+            right: 30px;
+        }
+    }
+}
+
+
+@media (min-width:640px) and (max-width: 992px) {
+    .navbar-nav {text-align: center;}
+    .form {
+        @include Flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .content-container {
+        .food__wrapper {
+            width: $fullWidth;
+            height: 65%;
+            .food__txt {
+                @include Flex;
+                align-items: center;
+                width: $half-width;
+                h1 {
+                    font-size: size(medium);
+                    width: 80%;
+                }
+                p {
+                    font-size: size(xSmall);
+                    width: 80%;
+                }
+                .btn__group {
+                    @include Flex;
+                    gap: 15px;
+                    .btn {
+                        width: 120px;
+                        height: 40px;
+                        margin-right: 26px;
+                    }
+                    .btn2 {
+                        margin: 0;
+                        width: 120px;
+                        height: 40px;
+                    }
+                }
+            }
+            .food__image {
+                @include Flex;
+                justify-content: center;
+                align-items: center;
+                width: $half-width;
+                img {
+                    width: 100%;
+                    height: 80%;
+                }
+            }
+        }
+        .food__feature {
+            width: $fullWidth;
+            height: auto;
+            .food__cards {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                .food__card {
+                    padding: 20px;
+                    width: 50%;
+                }
+                .food__card:nth-child(3) {
+                    margin: $margin;
+                }
+            }
+        }
+        .background__wrapper {
+            .food__aboutUs {
+                width: $fullWidth;
+                @include Flex;
+                justify-content: center;
+                flex-wrap: nowrap;
+                .about__image {
+                    width: $half-width;
+                    @include Flex;
+                    align-items: center;
+                    img {
+                        width: 100%;
+                        height: 80%;
+                    }
+                }
+                .about__text  {
+                    padding: 0 15px;
+                    span {
+                        font-size: size(regular);
+                    }
+                    h1 {
+                        margin: 5px 0;
+                        font-size: size(medium);
+                    }
+                    p {
+                        font-size: 19px;
+                        width: $fullWidth;
+                    }
+                    .btn {
+                        margin-bottom: 12px;
+                    }
+
+                }
+            }
+        }
+        .food__menu {
+            p {
+                width: $fullWidth;
+            }
+            width: $fullWidth;
+            .product__cards {
+                .product__card {
+                    width: 45%;
+                    margin: $margin;
+                }
+            }
+        }
+    }
+    .food__take {
+        width: $fullWidth !important;
+        gap: 30px;
+        height: auto;
+        .take__text {
+            height: auto;
+            text-align: center;
+            h1 {
+                padding: 0 20px;
+            }
+            p {
+                width: 80%;
+                padding: 0 10px;
+            }
+        }
+        .take__image {
+            img {
+                width: $fullWidth;
+            }
+        }
+    }
+        .carousel-inner {
+            width: $fullWidth !important;
+            .carousel-item {
+                p {
+                    width: 90%;
+                }
+            }
+        }
+        .food__contact {
+            .input-group {
+                input {
+                    width: 40%;
+                    text-align: start;
+                }
+            }
+        }
+        .food__footer {
+            width: $fullWidth;
+            @include Flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            .footer__links {
+                width: 45%;
+            }
+            .footer__links:not(:nth-child(1)) ul li, span  {
+                margin-right: 0;
+            }
+        }
+    #product_modal {
+        #outBtn {
+            right: 30px;
+        }
+    }
+}
+
+#thank {
+    border: transparent;
+    width:420px;
+    height:100px;
+    font-size:40px;
+    background-color:rgb(10, 221, 91);
+    color: $white;
+    border-radius: 10px;
+    position:fixed;
+    top:42%;
+    left:37%;
+    z-index: 9999;
+    display: none;
+}
+
+// * product modal style
+#product_modal {
+    width: $fullWidth;
+    height: 100vh;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    overflow-y: scroll;
+    @include Flex;
+    justify-content: center;
+    background-color: rgb(219, 220, 223, 0.6);
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    transition: all .5s ease-in-out;
+    z-index: 4;
+    .outBtn {
+       width: 110px;
+       height: 60px;
+       position: absolute;
+       right: 116px;
+       border-radius: 5px;
+       top: 10px;
+       color: red;
+       font-size: 20px;
+       border: none;
+       &:active {
+           color: $white;
+           background-color: red;
+           @include scale;
+       }
+    }
+    #product_modal_content {
+        width: $fullWidth;
+        margin-top: 90px;
+        position: relative;
+        height: 420px;
+        .tableRow {
+            background: #5A9BD5;
+            backdrop-filter: blur(5px);
+            .tableHeader {
+                border-left: 2px solid lightgrey;
+                font-weight: weight(bold);
+                font-size: size(semi-regular);
+                color: $white;
+                @include button;
+            }
+        }
+        tbody {
+            tr {
+                th {
+                    font-weight: weight(bold);
+                    font-size: 22px;
+                    background-color: #D2DDF0;
+                }
+                td {
+                    border: 2px solid lightgrey;
+                    background-color: #D2DDF0;
+                    @include button;
+                    margin-top: 20px;
+                }
+            }
+        }
+        #orderPrice {
+         .order {
+            padding:0 115px;
+            border-radius:5px;
+            background-color:#5A9BD5;
+            border:none;
+            color: $white;
+            font-size: size(medium);
+            transition: .6s;
+            animation: animateBtn 1.8s linear infinite alternate;
+
+            &:active {
+               @include scale;
+            }
+            &:hover {
+                box-shadow: 
+                inset 0 400px 0 0 rgb(16, 194, 197);
+            }
+        }
+        }
+    }
+    #results {
+        display:none;
+      }      
+}
+
+
+
+.activeModal {
+    top: 50% !important;
+    left: 50% !important;
+}
+
+.deactivate {
+    pointer-events: none !important;
+    opacity: 0.5 !important;
+}
+
+.toDarkMode {
+    background-color: $blk-clr;
+    color: $white;
+}
+
+@keyframes animateBtn {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
