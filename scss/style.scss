@@ -103,7 +103,7 @@ html {
     gap: 12px;
     .nav-item {
       .nav-link {
-        color: $nav-txt-clr;
+        color: $btn-background-clr;
         letter-spacing: 0.5px;
         font-size: 17px;
       }
@@ -762,9 +762,9 @@ html {
     #product_modal_content {
       overflow-x: auto;
       .tableRow {
-        border: 1px solid blue;
-        .tableHeader {
-          width: 20px;
+          .tableHeader {
+            font-size: size(xSmall) !important;
+            width: 20px;
         }
       }
     }

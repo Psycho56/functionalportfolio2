@@ -43,7 +43,7 @@ html {
   gap: 12px;
 }
 .navbar .navbar-nav .nav-item .nav-link {
-  color: #1ea4ff;
+  color: #dc780b;
   letter-spacing: 0.5px;
   font-size: 17px;
 }
@@ -256,12 +256,7 @@ html {
   justify-content: space-between;
   padding: 5px 25px;
 }
-.content-container
-  .food__menu
-  .product__cards
-  .product__card
-  .product__cost
-  h2 {
+.content-container .food__menu .product__cards .product__card .product__cost h2 {
   font-size: 25px;
   margin-top: 5px;
 }
@@ -276,12 +271,7 @@ html {
 .content-container .food__menu .product__cards .product__card .product__count {
   padding: 15px 25px;
 }
-.content-container
-  .food__menu
-  .product__cards
-  .product__card
-  .product__count
-  .addBtn {
+.content-container .food__menu .product__cards .product__card .product__count .addBtn {
   width: 60px;
   border-radius: 8px;
   height: 50px;
@@ -291,21 +281,11 @@ html {
   background-color: #dc780b;
   transition: 0.2s;
 }
-.content-container
-  .food__menu
-  .product__cards
-  .product__card
-  .product__count
-  .addBtn:active {
+.content-container .food__menu .product__cards .product__card .product__count .addBtn:active {
   transform: scale(0.9);
   color: rgb(0, 255, 8);
 }
-.content-container
-  .food__menu
-  .product__cards
-  .product__card
-  .product__count
-  .stars {
+.content-container .food__menu .product__cards .product__card .product__count .stars {
   height: 40px;
   border: 1px solid red;
   display: flex;
@@ -684,10 +664,8 @@ html {
   #product_modal #product_modal_content {
     overflow-x: auto;
   }
-  #product_modal #product_modal_content .tableRow {
-    border: 1px solid blue;
-  }
   #product_modal #product_modal_content .tableRow .tableHeader {
+    font-size: 15px !important;
     width: 20px;
   }
   #product_modal #outBtn {

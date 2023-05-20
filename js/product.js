@@ -75,7 +75,7 @@ function showPopup() {
 
 function sendOrder() {
   if (card.length === 0) {
-    alert("No items selected!!");
+    alert("No items selected!! Please, make sure to select something!!");
   } else {
     showPopup();
     card = [];

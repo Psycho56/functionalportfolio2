@@ -8,7 +8,7 @@ const product = [
         title: 'Vegie Muffen',
         text:'There are many things are needed to start the Fast Food Buisness.',
         price: 2,
-        stock: 10,
+        stock: 20,
         rate: '⭐⭐⭐',
     },
     {
@@ -17,7 +17,7 @@ const product = [
         title: 'Oliver James',
         text:'Meaning: It is a variation of the name Luke and other names',
         price: 16,
-        stock: 7,
+        stock: 18,
         rate: '⭐⭐⭐⭐',
     },
     {
@@ -26,7 +26,7 @@ const product = [
         title: 'Joseph Noah',
         text:'Oscar: A name of Irish origin, Oscar means “deer friend”.',
         price: 20,
-        stock: 8,
+        stock: 25,
         rate: '⭐⭐⭐⭐⭐',
     },
     {
@@ -35,7 +35,7 @@ const product = [
         title: 'Lavender Posey',
         text:'The namesake of the future king of England is an essential thing.',
         price: 10,
-        stock: 12,
+        stock: 22,
         rate: '⭐⭐⭐',
     },
     {
@@ -44,7 +44,7 @@ const product = [
         title: 'Araminta Birdie',
         text:'The name Charles is a boy of French origin meaning "free man".',
         price: 12,
-        stock: 5,
+        stock: 34,
         rate: '⭐⭐⭐⭐',
     },
     {
@@ -53,7 +53,7 @@ const product = [
         title: 'Arden Waverly',
         text:'James is an English derivation of the Hebrew name Jacob..',
         price: 30,
-        stock: 10,
+        stock: 40,
         rate: '⭐⭐⭐⭐⭐ ',
     },
 ];
