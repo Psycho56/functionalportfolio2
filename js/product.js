@@ -1,8 +1,8 @@
 const productToHtml = () => {
-    const product_Html = [];
+  const product_Html = [];
 
-    for (let i of product) {
-        product_Html.push(`
+  for (let i of product) {
+    product_Html.push(`
             <div class="product__card">
                 <img src="${i.image}" alt="">
                 <div class="product__cost">
@@ -12,164 +12,150 @@ const productToHtml = () => {
                 <p>${i.text}</p>
                 <div class="stars">${i.rate}</div>
                 <div class="product__count">
-                    ${card.some(item => item.id === i.id) ?
-                        `<div>
-                            <button onclick="minusCount(${i.id})" class="addBtn">-</button>
+                    ${
+                      card.some((item) => item.id === i.id)
+                        ? `<div>
+                            <button onclick="minusCount(${
+                              i.id
+                            })" class="addBtn">-</button>
                             <span style="font-size:26px">
                                 ${getCount(i.id)}
                             </span>
-                            <button onclick="plusCount(${i.id})" class="addBtn ${getCount(i.id) >= i.stock && "deactivate"}">+</button>
+                            <button onclick="plusCount(${
+                              i.id
+                            })" class="addBtn ${
+                            getCount(i.id) >= i.stock && "deactivate"
+                          }">+</button>
                         </div>`
-                        :
-                        `<button  onclick="addToCart(${i.id})" class="addBtn">+</button>`
+                        : `<button  onclick="addToCart(${i.id})" class="addBtn">+</button>`
                     }
                 </div>
             </div>
-        `)
-    }
+        `);
+  }
 
-    document.getElementById('product__cards').innerHTML = product_Html.join('');
-}
+  document.getElementById("product__cards").innerHTML = product_Html.join("");
+};
 
 const renderOrderPrice = () => {
-    let totalPrice = card.reduce((acc, curr) => acc += curr.count * curr.price, 0);
-    let tax = 2;
-    const orderContent = `
+  let totalPrice = card.reduce(
+    (acc, curr) => (acc += curr.count * curr.price),
+    0
+  );
+  let tax = 2;
+  const orderContent = `
         <div class="my-5">
-            <h3 class="px-3"> SubTotal: ${card.reduce((acc, curr) => acc += curr.count * curr.price, 0)}$</h3>
+            <h3 class="px-3"> SubTotal: ${card.reduce(
+              (acc, curr) => (acc += curr.count * curr.price),
+              0
+            )}$</h3>
             <h3 class="px-3"> Tax: 2%</h3>
-            <h3 class="px-3"> Product count: ${card.reduce((acc, curr) => acc += curr.count, 0)} </h3> <br> <hr>
+            <h3 class="px-3"> Product count: ${card.reduce(
+              (acc, curr) => (acc += curr.count),
+              0
+            )} </h3> <br> <hr>
             <h3 class="px-3"></h3>
             <div class="d-flex justify-content-between px-3 py-3">
             <h1> Total:  ${totalPrice * ((100 + tax) / 100)}$</h1>
             <button onclick="sendOrder()" id="order" class="order">Order</button>
             </div>
         </div>
-    `
-    document.getElementById('orderPrice').innerHTML = orderContent;
-}
+    `;
+  document.getElementById("orderPrice").innerHTML = orderContent;
+};
 
 function showPopup() {
-    const popup = document.getElementById('thank');
-    popup.style.display = 'block';
-  
-    setTimeout(function() {
-      popup.style.display = 'none';
-    }, 3000);
-  }
-  
+  const popup = document.getElementById("thank");
+  popup.style.display = "block";
 
-function sendOrder() {
-    if (card.length === 0) {
-        alert('No items selected!!');
-    } 
-    else {
-        showPopup();
-        card = [];
-        productToHtml();
-    }
-    toggleModal();
+  setTimeout(function () {
+    popup.style.display = "none";
+  }, 3000);
 }
 
-
+function sendOrder() {
+  if (card.length === 0) {
+    alert("No items selected!!");
+  } else {
+    showPopup();
+    card = [];
+    productToHtml();
+  }
+  toggleModal();
+}
 
 const productToModal = () => {
-    const Modal = [];
-    let index = 0;
-    for (let item of card) {
-        index++
-        Modal.push(
-        `
+  const Modal = [];
+  let index = 0;
+  for (let item of card) {
+    index++;
+    Modal.push(
+      `
             <tr>
                 <th class="text-center">${index}</th>
-                <td class="text-center"><img style="width:83.5px;border-radius:10px;" src="${item.image}" alt="nothing"></td>
+                <td class="text-center"><img style="width:83.5px;border-radius:10px;" src="${
+                  item.image
+                }" alt="nothing"></td>
                 <td>${item.title}</td>
                 <td>${item.count}</td>
                 <td>${item.price}$</td>
                 <td>${item.count * item.price}$</td>
-                <td class="text-center"><button class="my-3" onclick="deleteBtn(${item.id})" id="delete">Delete</button></td>
+                <td class="text-center"><button class="my-3" onclick="deleteBtn(${
+                  item.id
+                })" id="delete">Delete</button></td>
             </tr>
             `
-        )
-    }
-    document.getElementById('tableBody').innerHTML = Modal.join(' ');
-    renderOrderPrice();
-}
-
-
-
-
-const getCount = (id) => {
-    return card.find(item => item.id === id)?.count;
-}
-
-const addToCart = (id) => {
-    const response = product.find(i => i.id === id);
-    card.push({ ...response, count: 1 });    
-    productToHtml();
-}
-
-const plusCount = (id) => {
-    const index = card.findIndex(i => i.id === id);
-    card[index].count = card[index].count + 1;
-    productToHtml();
-}
-const minusCount = (id) => {
-    const index = card.findIndex(i => i.id === id);
-    if (card[index].count === 1) {
-        card.splice(index, 1);
-    } else {
-        card[index].count = card[index].count - 1;
-    }
-    productToHtml();
-}
-
-const toggleModal = () => {
-    document.getElementById('product_modal').classList.toggle('activeModal');
-    productToModal();
-}
-
-const toDark = () => {
-    document.body.classList.toggle('toDarkMode');
-}
-
-const deleteBtn = (id) => {
-    const index = card.findIndex(item => item.id === id);
-    card.splice(index, 1);
-    productToModal();
+    );
+  }
+  document.getElementById("tableBody").innerHTML = Modal.join(" ");
+  renderOrderPrice();
 };
 
+const getCount = (id) => {
+  return card.find((item) => item.id === id)?.count;
+};
+
+const addToCart = (id) => {
+  const response = product.find((i) => i.id === id);
+  card.push({ ...response, count: 1 });
+  productToHtml();
+};
+
+const plusCount = (id) => {
+  const index = card.findIndex((i) => i.id === id);
+  card[index].count = card[index].count + 1;
+  productToHtml();
+};
+const minusCount = (id) => {
+  const index = card.findIndex((i) => i.id === id);
+  if (card[index].count === 1) {
+    card.splice(index, 1);
+  } else {
+    card[index].count = card[index].count - 1;
+  }
+  productToHtml();
+};
+
+const toggleModal = () => {
+  document.getElementById("product_modal").classList.toggle("activeModal");
+  productToModal();
+};
+
+const toDark = () => {
+  document.body.classList.toggle("toDarkMode");
+};
+
+const deleteBtn = (id) => {
+  const index = card.findIndex((item) => item.id === id);
+  card.splice(index, 1);
+  productToModal();
+};
 
 const closeBtn = () => {
-    toggleModal();
-    card = [];
-    productToHtml();
-}
-
-// Tip calculator
-document.querySelector('#tip-form').onchange = function(){
-
-    let bill = Number(document.getElementById('billTotal').value);
-    let tip = document.getElementById('tipInput').value;
-    document.getElementById('tipOutput').innerHTML = `${tip}%`;
-    let tipValue = bill * (tip/100)
-    let finalBill = bill + tipValue
-  console.log(finalBill)
-  let tipAmount = document.querySelector('#tipAmount')
-  let totalBillWithTip = document.querySelector('#totalBillWithTip')
-  
-  tipAmount.value = tipValue.toFixed(2);
-   totalBillWithTip.value =finalBill.toFixed(2);
-    
-    document.getElementById('results').style.display='block'
-  }
-  
-
-
+  toggleModal();
+  card = [];
+  productToHtml();
+};
 
 productToHtml();
 productToModal();
-
-
-
-

@@ -1,295 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./assets/bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Portfolio with JS</title>
-
-</head>
-<body>
-     
+  </head>
+  <body>
+    <!-- ! Navbar -->
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="./assets/icons/logo.png" alt="">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/icons/logo.png" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#food__aboutUs">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#food__menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#food__feature">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#food__contact">Contact us</a>
+            </li>
+          </ul>
+          <form class="d-flex form">
+            <button onclick="toDark()" id="sun">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="currentColor"
+                class="bi bi-sun"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                />
+              </svg>
+            </button>
+            <button
+              id="bascet"
+              onclick="toggleModal()"
+              class="submitBtn text-white"
+              type="button"
+            >
+              Bascet
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ! Whole Content -->
+    <div class="content-container">
+      <div class="food__wrapper">
+        <div class="food__txt">
+          <h1>Making time a good time by making food the good food.</h1>
+          <p>
+            There are many things that are needed to start a Fast Food Business.
+            You only need Just Food Stalls with Persons but also specialized
+            equipments.
+          </p>
+          <div class="btn__group">
+            <button class="btn">Order Now</button>
+            <button class="btn2">Food Details</button>
+          </div>
+        </div>
+        <div class="food__image">
+          <img src="./assets/images/eatHamburger.png" alt="" />
+        </div>
+      </div>
+
+      <div class="food__feature" id="food__feature">
+        <span>Feature</span>
+        <h1>Food With A New Passion</h1>
+        <div class="food__cards">
+          <div class="food__card">
+            <img src="./assets/icons/house.png" alt="" />
+            <h1>Quality Food</h1>
+            <p>
+              It can be a very path to earn good money and make you very
+              successful creative entrepreneur.
+            </p>
+          </div>
+          <div class="food__card">
+            <img src="./assets/icons/food-delivery.png" alt="" />
+            <h1>Food Delivery</h1>
+            <p>
+              It can be a very path to earn good money and make you very
+              successful creative entrepreneur.
+            </p>
+          </div>
+          <div class="food__card">
+            <img src="./assets/icons/smile.png" alt="" />
+            <h1>Super Taste</h1>
+            <p>
+              It can be a very path to earn good money and make you very
+              successful creative entrepreneur.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="background__wrapper">
+        <div class="food__aboutUs" id="food__aboutUs">
+          <div class="about__image">
+            <img src="./assets/images/girl eating.png" alt="" />
+          </div>
+          <div class="about__text">
+            <span>About us</span>
+            <h1>
+              Food Stalls width Persons but to Product marketing plane catligues
+              etc to
+            </h1>
+            <p>
+              There are many things are needed to start the Fast Food Buisness.
+              You need not only Just Food Stalls with Persons but also equipment
+              make your marketing plane Effective
+            </p>
+            <button class="btn">Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="food__menu" id="food__menu">
+        <span>Menu</span>
+        <h1>Food Full of treaty Love</h1>
+        <p>
+          There are many things that are needed to start a Fast Food Buisness.
+          You only need Just Food Stalls with Persons but also specialized
+          equipment, skills to manage customers
+        </p>
+        <div class="product__cards" id="product__cards">
+          <!-- There will be some code which is going to be exported to  here -->
+        </div>
+        <span class="learnMore my-5">Learn more</span>
+      </div>
+      <div class="food__take">
+        <div class="take__text">
+          <span>TAKE AWAY</span>
+          <h1>Food Stalls width Persons but to Product marketing plane.</h1>
+          <p>
+            There are many things are needed to start the Fast Food Buisness.
+            You need only Just Food Stalls with Persons but also specialized
+            equpment, Skills to manage Custimers
+          </p>
+          <div class="takeBtn__group">
+            <button class="takeBtn takeBtn1">App store</button>
+            <button class="takeBtn takeBtn2">Google Play</button>
+          </div>
+        </div>
+        <div class="take__image">
+          <img src="./assets/images/mobil.jpg" alt="" />
+        </div>
+      </div>
+      <div
+        id="carouselExampleAutoplaying"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <span>Testimonial</span>
+            <h1>Making Food great again and again</h1>
+            <p>
+              You need only Just Food Stalls with Persons but also specialized
+              equpment, Skills to manage Custimers, Effective Product catlogues
+              etc to make your.
+            </p>
+            <img src="./assets/icons/user.png" alt="" />
+            <p class="txt">
+              You need only Just Food Stalls with Persons but also specialized
+              equpment, Skills to manage Custimers, Effective Product catlogues
+              etc to make your.
+            </p>
+            <div class="stars2">⭐⭐⭐⭐⭐</div>
+            <span>Augusta W.Reynoso</span>
+            <p>UI/UX DESIGNER</p>
+          </div>
+          <div class="carousel-item">
+            <h1>Making Food great again and again</h1>
+            <p>
+              You need only Just Food Stalls with Persons but also specialized
+              equpment, Skills to manage Custimers, Effective Product catlogues
+              etc to make your.
+            </p>
+            <img src="./assets/icons/user.png" alt="" />
+            <p class="txt">
+              You need only Just Food Stalls with Persons but also specialized
+              equpment, Skills to manage Custimers, Effective Product catlogues
+              etc to make your.
+            </p>
+            <div class="stars2">⭐⭐⭐⭐⭐</div>
+            <span>Augusta W.Reynoso</span>
+            <p>UI/UX DESIGNER</p>
+          </div>
+          <div class="carousel-item">
+            <h1>Making Food great again and again</h1>
+            <p>
+              You need only Just Food Stalls with Persons but also specialized
+              equpment, Skills to manage Custimers, Effective Product catlogues
+              etc to make your.
+            </p>
+            <img src="./assets/icons/user.png" alt="" />
+            <p class="txt">
+              You need only Just Food Stalls with Persons but also specialized
+              equpment, Skills to manage Custimers, Effective Product catlogues
+              etc to make your.
+            </p>
+            <div class="stars2">⭐⭐⭐⭐⭐</div>
+            <span>Augusta W.Reynoso</span>
+            <p>UI/UX DESIGNER</p>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev"
+        >
+          <span
+            style="
+              margin-left: 150px;
+              border-radius: 15px;
+              width: 27px;
+              height: 27px;
+            "
+            class="carousel-control-prev-icon bg-dark"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next"
+        >
+          <span
+            style="
+              margin-right: 150px;
+              border-radius: 15px;
+              width: 27px;
+              height: 27px;
+            "
+            class="carousel-control-next-icon bg-dark"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="food__contact" id="food__contact">
+        <span>Contact</span>
+        <h3>
+          You need only Just Food Stalls with Persons but also specialized
+          equpment, Skills to manage
+        </h3>
+        <div class="input-group">
+          <input type="text" placeholder="Enter your message" />
+          <a href="mailto:kuliyevkamoliddin5@gmail.com"
+            ><button class="contactBtn">Send</button></a
+          >
+        </div>
+      </div>
+      <div class="food__footer">
+        <div class="footer__links">
+          <img src="./assets/icons/logo.png" alt="" />
+          <a href="#">
+            <p>
+              www.company name.com <br />
+              companyname@gmail.com <br />
+              Phone: +7 485-118-03-25
+            </p>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a  class="nav-link" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#food__aboutUs">About us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#food__menu">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#food__feature">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#food__contact">Contact us</a>
-              </li>
-            </ul>
-            <form class="d-flex form">
-              <button onclick="toDark()" id="sun"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-sun" viewBox="0 0 16 16">
-                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-              </svg></button>
-              <button id="bascet" onclick="toggleModal()" class="submitBtn text-white" type="button">Bascet</button>
-            </form>
-          </div>
         </div>
-      </nav>  
-
-      <div class="content-container">
-          <div class="food__wrapper">
-            <div class="food__txt" >
-                <h1>Making time a good time by making food the good food.</h1>
-                <p>There are many things that are needed to start a Fast Food Business. You only need Just Food Stalls with Persons but also specialized equipments.</p>
-                <div class="btn__group">
-                    <button class="btn">Order Now</button>
-                    <button class="btn2">Food Details</button>
-                </div>
-            </div>
-            <div class="food__image">
-                <img src="./assets/images/eatHamburger.png" alt="">
-            </div>
-          </div>
-
-          <div class="food__feature" id="food__feature">
-            <span>Feature</span>
-            <h1>Food With A New Passion</h1>
-            <div class="food__cards">
-                <div class="food__card">
-                    <img src="./assets/icons/house.png" alt="">
-                    <h1>Quality Food</h1>
-                    <p>It can be a very path to earn good money and make you very successful creative entrepreneur.</p>
-                </div>
-                <div class="food__card">
-                    <img src="./assets/icons/food-delivery.png" alt="">
-                    <h1>Food Delivery</h1>
-                    <p>It can be a very path to earn good money and make you very successful creative entrepreneur.</p>
-                </div>
-                <div class="food__card">
-                    <img src="./assets/icons/smile.png" alt="">
-                    <h1>Super Taste</h1>
-                    <p>It can be a very path to earn good money and make you very successful creative entrepreneur.</p>
-                </div>
-            </div>
-          </div>
-          <div class="background__wrapper">
-              <div class="food__aboutUs" id="food__aboutUs">
-                <div class="about__image">
-                    <img src="./assets/images/girl eating.png" alt="">
-                </div>
-                <div class="about__text">
-                    <span>About us</span>
-                    <h1>Food Stalls width Persons but to Product marketing plane catligues etc to</h1>
-                    <p>There are many things are needed to start the Fast Food Buisness. You need not only Just Food Stalls with Persons but also equipment make your marketing plane Effective</p>
-                    <button class="btn">Read more</button>
-                </div>
-              </div>
-          </div>
-          <div class="food__menu" id="food__menu">
+        <div class="footer__links">
+          <ul>
+            <span>Home</span>
+            <a href="#">
+              <li>Landingpage</li>
+            </a>
+            <a href="#">
+              <li>Documentation</li>
+            </a>
+            <a href="#">
+              <li>Referral Program</li>
+            </a>
+            <a href="#">
+              <li>UI & UX Design</li>
+            </a>
+            <a href="#">
+              <li>Web Design</li>
+            </a>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <ul>
             <span>Menu</span>
-            <h1>Food Full of treaty Love</h1>
-            <p>There are many things that are needed to start a Fast Food Buisness. You only need Just Food Stalls with Persons but also specialized equipment, skills to manage customers</p>
-            <div class="product__cards" id="product__cards">
-              <!-- There will be some code which is going to be exported to  here -->
+            <a href="#">
+              <li>Landingpage</li>
+            </a>
+            <a href="#">
+              <li>Documentation</li>
+            </a>
+            <a href="#">
+              <li>Referral Program</li>
+            </a>
+            <a href="#">
+              <li>UI & UX Design</li>
+            </a>
+            <a href="#">
+              <li>Web Design</li>
+            </a>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <ul>
+            <span>Company</span>
+            <a href="#">
+              <li>Landingpage</li>
+            </a>
+            <a href="#">
+              <li>Documentation</li>
+            </a>
+            <a href="#">
+              <li>Referral Program</li>
+            </a>
+            <a href="#">
+              <li>UI & UX Design</li>
+            </a>
+            <div class="icon__group">
+              <img src="./assets/icons/instagram.png" alt="" />
+              <img src="./assets/icons/facebook.png" alt="" />
+              <img src="./assets/icons/twitter 1.png" alt="" />
+              <img src="./assets/icons/you-tube.png" alt="" />
             </div>
-            <span class="learnMore my-5">Learn more</span>
-          </div>
-          <div class="food__take">
-            <div class="take__text">
-               <span>TAKE AWAY</span>
-               <h1>Food Stalls width Persons but to Product marketing plane.</h1>
-               <p>There are many things are needed to start the Fast Food Buisness. You need only Just Food Stalls with Persons but also specialized equpment, Skills to manage Custimers</p>
-               <div class="takeBtn__group">
-                <button class="takeBtn takeBtn1">App store</button>
-                <button class="takeBtn takeBtn2">Google Play</button>
-            </div>
-            </div>
-            <div class="take__image">
-                <img src="./assets/images/mobil.jpg" alt="">
-            </div>
-          </div>
-          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <span>Testimonial</span>
-                <h1>Making Food great again and again</h1>
-                <p>You need only Just Food Stalls with Persons but also specialized equpment, Skills to manage Custimers, Effective Product catlogues etc to make your.</p>
-                <img src="./assets/icons/user.png" alt="">
-                <p class="txt">You need only Just Food Stalls with Persons but also specialized equpment, Skills to manage Custimers, Effective Product catlogues etc to make your.</p>
-                <div class="stars2">⭐⭐⭐⭐⭐</div>
-                <span>Augusta W.Reynoso</span>
-                <p>UI/UX DESIGNER</p>
-              </div>
-              <div class="carousel-item">
-                <h1>Making Food great again and again</h1>
-                <p>You need only Just Food Stalls with Persons but also specialized equpment, Skills to manage Custimers, Effective Product catlogues etc to make your.</p>
-                <img src="./assets/icons/user.png" alt="">
-                <p class="txt">You need only Just Food Stalls with Persons but also specialized equpment, Skills to manage Custimers, Effective Product catlogues etc to make your.</p>
-                <div class="stars2">⭐⭐⭐⭐⭐</div>
-                <span>Augusta W.Reynoso</span>
-                <p>UI/UX DESIGNER</p>
-              </div>
-              <div class="carousel-item">
-                <h1>Making Food great again and again</h1>
-                <p>You need only Just Food Stalls with Persons but also specialized equpment, Skills to manage Custimers, Effective Product catlogues etc to make your.</p>
-                <img src="./assets/icons/user.png" alt="">
-                <p class="txt">You need only Just Food Stalls with Persons but also specialized equpment, Skills to manage Custimers, Effective Product catlogues etc to make your.</p>
-                <div class="stars2">⭐⭐⭐⭐⭐</div>
-                <span>Augusta W.Reynoso</span>
-                <p>UI/UX DESIGNER</p>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-              <span style="margin-left:150px; border-radius: 15px; width: 27px; height: 27px;" class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-              <span style="margin-right:150px; border-radius: 15px; width: 27px; height: 27px;" class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <div class="food__contact" id="food__contact">
-            <span>Contact</span>
-            <h3>You need only Just Food Stalls with Persons but also specialized equpment, Skills to manage</h3>
-            <div class="input-group">
-                <input type="text" placeholder="Enter your message">
-              <a href="mailto:kuliyevkamoliddin5@gmail.com"><button class="contactBtn">Send</button></a>
-            </div>
-          </div>
-          <div class="food__footer">
-              <div class="footer__links">
-                <img src="./assets/icons/logo.png" alt="">
-              <a href="#">
-                  <p>www.company name.com <br>
-                        companyname@gmail.com <br>
-                        Phone: +7 485-118-03-25</p></a>  
-              </div>
-              <div class="footer__links">
-                  <ul>
-                    <span>Home</span>
-                    <a href="#"><li>Landingpage</li></a>
-                    <a href="#"><li>Documentation</li></a>
-                    <a href="#"><li>Referral Program</li></a>
-                    <a href="#"><li>UI & UX Design</li></a>
-                    <a href="#"><li>Web Design</li></a>
-                </ul>
-              </div>
-              <div class="footer__links">
-                  <ul>
-                    <span>Menu</span>
-                    <a href="#"><li>Landingpage</li></a>
-                    <a href="#"><li>Documentation</li></a>
-                    <a href="#"><li>Referral Program</li></a>
-                    <a href="#"><li>UI & UX Design</li></a>
-                    <a href="#"><li>Web Design</li></a>
-                </ul>
-              </div>
-              <div class="footer__links">
-                  <ul>
-                      <span>Company</span>
-                      <a href="#"><li>Landingpage</li></a>
-                      <a href="#"><li>Documentation</li></a>
-                      <a href="#"><li>Referral Program</li></a>
-                      <a href="#"><li>UI & UX Design</li></a>
-                      <div class="icon__group">
-                          <img src="./assets/icons/instagram.png" alt="">
-                          <img src="./assets/icons/facebook.png" alt="">
-                          <img src="./assets/icons/twitter 1.png" alt="">
-                          <img src="./assets/icons/you-tube.png" alt="">
-                      </div>
-                  </ul>
-              </div>
-          </div>
-      </div>
-
-      
-      <button onclick="showPopup()" id="thank">😄 Thanks for buying!!</button>
-      <!-- ! product modal -->
-      <div id="product_modal">
-          <button onclick="closeBtn(alert('Are you sure, you want to cancel the order!'))" class="outBtn" id="outBtn">Close</button>
-        <div id="product_modal_content">
-         <table id="table" class="table">
-            <thead>
-              <tr class="tableRow">
-                <th class="tableHeader" scope="col">N</th>
-                <th class="tableHeader" scope="col">Image</th>
-                <th class="tableHeader" scope="col">Title</th>
-                <th class="tableHeader" scope="col">Stock</th>
-                <th class="tableHeader" scope="col">Price</th>
-                <th class="tableHeader" scope="col">Total price</th>
-                <th class="tableHeader text-center" scope="col"><button id="delete" onclick="deleteBtn()" class="delete">Delete all</button></th>
-              </tr>
-            </thead>
-            <tbody id="tableBody">
-              <!-- code -->
-            </tbody>
-          </table>
-          <div id="orderPrice">
-            <!-- code -->
-          </div>
-          <div class="container" style="padding: 50px 0;">
-            <div class="row">
-              <div class="col-md-6 mx-auto" style="padding: 50px 0;">
-                <div class="card card-body text-center mt-5">
-                  <h1 class="heading display-5 pb-3">Tax Calculator</h1>
-                  <form id="tip-form">
-                    <div class="form-group">
-                      <div class="input-group d-flex align-items-center gap-3">
-                        <span class="input-group-addon">$</span>
-                        <input style="padding: 12px;" type="number" class="form-control" id="billTotal" placeholder="Total Bill">
-                      </div>
-                    </div>
-                    <div class="form-group tipPersent">
-                      <div class="input-group d-flex align-items-center gap-3 my-3">
-                        <label for="">Tax:</label>
-                        <input style="padding: 12px;" type="range" class="form-control" id="tipInput" value="0">
-                        <span class="input-group-addon" id="tipOutput"></span>
-                      </div>
-                    </div>
-                  </form>
-                  <hr>
-                  <!-- RESULTS -->
-                  <div id="results" class="pt-4" style="padding: 50px 0;">
-                    <h5 class="fs-4">Results</h5>
-                    <div class="form-group">
-                      <div class="input-group d-flex align-items-center gap-3">
-                        <span class="input-group-addon">Tax num:</span>
-                        <input type="number" class="form-control" id="tipAmount" disabled>
-                      </div>
-                    </div>
-      
-                    <div class="form-group">
-                      <div class="input-group d-flex align-items-center gap-3 my-3">
-                        <span class="input-group-addon">Total Tip:</span>
-                        <input type="number" class="form-control" id="totalBillWithTip" disabled>
-                      </div>
-                    </div>
-      
-      
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
+          </ul>
         </div>
       </div>
+    </div>
 
+    <button onclick="showPopup()" id="thank">😄 Thanks for buying!!</button>
+    <!-- ! Product modal -->
+    <div id="product_modal">
+      <button
+        onclick="closeBtn(alert('Are you sure, you want to cancel the order!'))"
+        class="outBtn"
+        id="outBtn"
+      >
+        Close
+      </button>
+      <div id="product_modal_content">
+        <table id="table" class="table">
+          <thead>
+            <tr class="tableRow">
+              <th class="tableHeader" scope="col">N</th>
+              <th class="tableHeader" scope="col">Image</th>
+              <th class="tableHeader" scope="col">Title</th>
+              <th class="tableHeader" scope="col">Stock</th>
+              <th class="tableHeader" scope="col">Price</th>
+              <th class="tableHeader" scope="col">Total price</th>
+              <th class="tableHeader text-center" scope="col">
+                <button id="delete" onclick="deleteBtn()" class="delete">
+                  Delete all
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- products_card will render here -->
+          </tbody>
+        </table>
+        <div id="orderPrice">
+          <!-- total calculated products code will render here -->
+        </div>
+      </div>
+    </div>
 
-
-      <script src="./assets/bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.js"></script>
-      <script  src="./js/index.js"></script>
-      <script  src="./js/product.js"></script>
-</body>
+    <script src="./assets/bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/product.js"></script>
+  </body>
 </html>

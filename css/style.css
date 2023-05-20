@@ -10,7 +10,7 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgb(16, 235, 238);
-  background-color: #1EA4FF;
+  background-color: #1ea4ff;
 }
 
 html {
@@ -43,7 +43,7 @@ html {
   gap: 12px;
 }
 .navbar .navbar-nav .nav-item .nav-link {
-  color: #1EA4FF;
+  color: #1ea4ff;
   letter-spacing: 0.5px;
   font-size: 17px;
 }
@@ -58,7 +58,7 @@ html {
   border: transparent;
   border-radius: 5px;
   height: 60px;
-  background-color: #DC780B;
+  background-color: #dc780b;
 }
 .navbar .form .submitBtn:active {
   transform: scale(0.9);
@@ -92,7 +92,7 @@ html {
 .content-container .food__wrapper .food__txt .btn__group .btn {
   width: 150px;
   height: 50px;
-  background-color: #DC780B;
+  background-color: #dc780b;
   color: #fff;
   font-size: 18px;
 }
@@ -102,10 +102,10 @@ html {
 .content-container .food__wrapper .food__txt .btn__group .btn2 {
   width: 170px;
   height: 50px;
-  border: 2px solid #DC780B;
+  border: 2px solid #dc780b;
   border-radius: 5px;
   margin-left: 27px;
-  color: #DC780B;
+  color: #dc780b;
   font-size: 18px;
 }
 .content-container .food__wrapper .food__txt .btn__group .btn2:active {
@@ -126,7 +126,7 @@ html {
 }
 .content-container .food__feature span {
   letter-spacing: 1.5px;
-  color: #DC780B;
+  color: #dc780b;
   font-size: 30px;
 }
 .content-container .food__feature .food__cards {
@@ -184,7 +184,7 @@ html {
 .content-container .food__aboutUs .about__text span {
   font-size: 25px;
   font-weight: 600;
-  color: #DC780B;
+  color: #dc780b;
   letter-spacing: 1.7px;
 }
 .content-container .food__aboutUs .about__text h1 {
@@ -199,7 +199,7 @@ html {
 .content-container .food__aboutUs .about__text .btn {
   width: 145px;
   height: 50px;
-  background-color: #DC780B;
+  background-color: #dc780b;
   color: #fff;
   margin-top: 12px;
 }
@@ -216,7 +216,7 @@ html {
 .content-container .food__menu span {
   font-size: 25px;
   font-weight: 700;
-  color: #DC780B;
+  color: #dc780b;
   letter-spacing: 3px;
 }
 .content-container .food__menu h1 {
@@ -244,7 +244,7 @@ html {
   border-top-left-radius: 55px;
   box-shadow: 8px 8px 17px 0px lightgrey;
   margin: 0 auto;
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
 }
 .content-container .food__menu .product__cards .product__card img {
   border-top-left-radius: 55px;
@@ -256,7 +256,12 @@ html {
   justify-content: space-between;
   padding: 5px 25px;
 }
-.content-container .food__menu .product__cards .product__card .product__cost h2 {
+.content-container
+  .food__menu
+  .product__cards
+  .product__card
+  .product__cost
+  h2 {
   font-size: 25px;
   margin-top: 5px;
 }
@@ -271,21 +276,36 @@ html {
 .content-container .food__menu .product__cards .product__card .product__count {
   padding: 15px 25px;
 }
-.content-container .food__menu .product__cards .product__card .product__count .addBtn {
+.content-container
+  .food__menu
+  .product__cards
+  .product__card
+  .product__count
+  .addBtn {
   width: 60px;
   border-radius: 8px;
   height: 50px;
   font-size: 30px;
   border: transparent;
   color: #fff;
-  background-color: #DC780B;
+  background-color: #dc780b;
   transition: 0.2s;
 }
-.content-container .food__menu .product__cards .product__card .product__count .addBtn:active {
+.content-container
+  .food__menu
+  .product__cards
+  .product__card
+  .product__count
+  .addBtn:active {
   transform: scale(0.9);
   color: rgb(0, 255, 8);
 }
-.content-container .food__menu .product__cards .product__card .product__count .stars {
+.content-container
+  .food__menu
+  .product__cards
+  .product__card
+  .product__count
+  .stars {
   height: 40px;
   border: 1px solid red;
   display: flex;
@@ -311,7 +331,7 @@ html {
 }
 .content-container .food__take .take__text span {
   font-size: 15px;
-  color: #DC780B;
+  color: #dc780b;
 }
 .content-container .food__take .take__text h1 {
   font-size: 35px;
@@ -367,7 +387,7 @@ html {
 }
 .content-container .carousel .carousel-inner .carousel-item span {
   font-size: 25px;
-  color: #DC780B;
+  color: #dc780b;
   font-weight: 700;
   letter-spacing: 4px;
   margin: 10px 0;
@@ -403,7 +423,7 @@ html {
 }
 .content-container .food__contact span {
   font-size: 20px;
-  color: #DC780B;
+  color: #dc780b;
   letter-spacing: 2px;
   font-weight: 600;
 }
@@ -432,7 +452,7 @@ html {
   height: 48px;
   border-radius: 5px;
   border: transparent;
-  background-color: #DC780B;
+  background-color: #dc780b;
   color: #fff;
 }
 .content-container .food__contact .input-group .contactBtn:active {
@@ -623,7 +643,8 @@ html {
     display: inline-block;
     margin: 0 auto;
   }
-  .content-container .food__footer .footer__links:not(:nth-child(1)) ul li, .content-container .food__footer span {
+  .content-container .food__footer .footer__links:not(:nth-child(1)) ul li,
+  .content-container .food__footer span {
     margin-right: 25px;
   }
   .background__wrapper {
@@ -657,8 +678,24 @@ html {
     width: 100%;
     height: 100%;
   }
+  #product_modal {
+    border: 1px solid lime;
+  }
+  #product_modal #product_modal_content {
+    overflow-x: auto;
+  }
+  #product_modal #product_modal_content .tableRow {
+    border: 1px solid blue;
+  }
+  #product_modal #product_modal_content .tableRow .tableHeader {
+    width: 20px;
+  }
   #product_modal #outBtn {
     right: 30px;
+  }
+  #thank {
+    width: 200px;
+    left: 0;
   }
 }
 @media (min-width: 640px) and (max-width: 992px) {
@@ -806,7 +843,8 @@ html {
   .food__footer .footer__links {
     width: 45%;
   }
-  .food__footer .footer__links:not(:nth-child(1)) ul li, .food__footer span {
+  .food__footer .footer__links:not(:nth-child(1)) ul li,
+  .food__footer span {
     margin-right: 0;
   }
   #product_modal #outBtn {
@@ -867,7 +905,7 @@ html {
   height: 420px;
 }
 #product_modal #product_modal_content .tableRow {
-  background: #5A9BD5;
+  background: #5a9bd5;
   backdrop-filter: blur(5px);
 }
 #product_modal #product_modal_content .tableRow .tableHeader {
@@ -889,11 +927,11 @@ html {
 #product_modal #product_modal_content tbody tr th {
   font-weight: 700;
   font-size: 22px;
-  background-color: #D2DDF0;
+  background-color: #d2ddf0;
 }
 #product_modal #product_modal_content tbody tr td {
   border: 2px solid lightgrey;
-  background-color: #D2DDF0;
+  background-color: #d2ddf0;
   margin-top: 20px;
 }
 #product_modal #product_modal_content tbody tr td #delete {
@@ -909,7 +947,7 @@ html {
 #product_modal #product_modal_content #orderPrice .order {
   padding: 0 115px;
   border-radius: 5px;
-  background-color: #5A9BD5;
+  background-color: #5a9bd5;
   border: none;
   color: #fff;
   font-size: 30px;
