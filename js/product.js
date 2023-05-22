@@ -44,7 +44,7 @@ const renderOrderPrice = () => {
   );
   let tax = 2;
   const orderContent = `
-        <div class="my-5">
+        <div id="orderContent" class="my-5">
             <h3 class="px-3"> SubTotal: ${card.reduce(
               (acc, curr) => (acc += curr.count * curr.price),
               0
@@ -55,7 +55,7 @@ const renderOrderPrice = () => {
               0
             )} </h3> <br> <hr>
             <h3 class="px-3"></h3>
-            <div class="d-flex justify-content-between px-3 py-3">
+            <div id="btnGroup" class="d-flex justify-content-between px-3 py-3">
             <h1> Total:  ${totalPrice * ((100 + tax) / 100)}$</h1>
             <button onclick="sendOrder()" id="order" class="order">Order</button>
             </div>

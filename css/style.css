@@ -659,21 +659,52 @@ html {
     height: 100%;
   }
   #product_modal {
-    border: 1px solid lime;
+    margin: 0;
+    position: relative;
   }
   #product_modal #product_modal_content {
+    height: auto;
     overflow-x: auto;
   }
   #product_modal #product_modal_content .tableRow .tableHeader {
-    font-size: 15px !important;
-    width: 20px;
+    font-size: 14px !important;
+    width: 200px !important;
+    height: 30px !important;
+  }
+  #product_modal #product_modal_content .tableRow .tableHeader #delete {
+    width: 85px !important;
+  }
+  #product_modal #product_modal_content #orderContent {
+    position: absolute;
+    z-index: 100;
+  }
+  #product_modal #product_modal_content #orderContent h3 {
+    font-size: 30px;
+    text-align: center;
+  }
+  #product_modal #product_modal_content #orderContent #btnGroup {
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  #product_modal #product_modal_content #orderContent #btnGroup h1 {
+    font-size: 40px;
+    display: inline-block;
+    font-weight: 700;
+    margin: 0 auto;
+  }
+  #product_modal #product_modal_content #orderContent #btnGroup #order {
+    margin-top: 10px;
+    margin-left: 20px;
   }
   #product_modal #outBtn {
     right: 30px;
   }
   #thank {
-    width: 200px;
-    left: 0;
+    position: absolute;
+    width: 300px !important;
+    left: 10% !important;
+    font-size: 25px !important;
   }
 }
 @media (min-width: 640px) and (max-width: 992px) {
