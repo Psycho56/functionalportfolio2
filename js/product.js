@@ -3,7 +3,7 @@ const productToHtml = () => {
 
   for (let i of product) {
     product_Html.push(`
-            <div class="product__card">
+            <div class="product__card" data-aos="flip-up" data-aos-duration="1500">
                 <img src="${i.image}" alt="">
                 <div class="product__cost">
                     <h2>${i.title}</h2>
